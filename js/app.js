@@ -5,6 +5,7 @@ const start = document.querySelector("#start");
 const pause = document.querySelector("#pause");
 const reset = document.querySelector("#reset");
 const timeDisplay = document.querySelector("#timeDisplay");
+const title = document.querySelector("title");
 
 let currentSelection = timeLarge;
 let currentTime = 0;
@@ -56,12 +57,14 @@ reset.addEventListener("click", function () {
 function setTime() {
     currentTimeLeft = Number(currentSelection.textContent.substring(2, 0) * 60);
     timeDisplay.textContent = (currentTimeLeft / 60).toFixed(2);
+    title.textContent = (currentTimeLeft / 60).toFixed(2);
 }
 
 function updateTime() {
     if (currentTimeLeft > 0) {
         currentTimeLeft--;
-        timeDisplay.textContent = Math.floor((currentTimeLeft / 60)) + "." + (currentTimeLeft % 60);
+        timeDisplay.textContent = Math.floor((currentTimeLeft / 60)) + ":" + (currentTimeLeft % 60);
+        title.textContent = (Math.floor((currentTimeLeft / 60)) + ":" + (currentTimeLeft % 60)) + " Time remaining";
     } else if (currentTimeLeft === 0) {
         timeRunning = false;
         soundOn = true;
