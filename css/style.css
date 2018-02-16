@@ -1,0 +1,109 @@
+img,
+embed,
+object,
+video {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", "Open Sans", sans-serif;
+}
+
+p,
+a,
+span {
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/************************************************************************/
+
+/*Unless needed, all new code goes below this. Dont change your defaults*/
+
+.space-around {
+    justify-content: space-around;
+}
+
+body {
+    padding: 5px;
+    background: linear-gradient(135deg, #8abaf2 0%, #292334 100%);
+    height: 100vh;
+}
+
+.timer-title {
+    width: 100%;
+    height: 100%;
+    font-size: 45px;
+    color: #f0eeea;
+}
+
+.button-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 25%;
+    height: 60px;
+    background-color: #292334;
+    color: #f0eeea;
+    border-radius: 8px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(0px);
+    transition: .3s
+}
+
+.button-background:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 25px 25px 40px rgba(0, 0, 0, 0.5);
+}
+
+#reset {
+    background-color: #cb4340;
+}
+
+.timer-container {
+    max-width: 98%;
+    margin: 5px;
+    padding: 5px;
+    height: 600px;
+    width: 900px;
+    border-radius: 8px;
+    background-color: #f0eeea;
+}
+
+.timer-options {
+    width: 100%;
+}
+
+.display {
+    width: 100%;
+    font-size: 25px;
+}
+
+.controls {
+    width: 100%;
+}
