@@ -10,20 +10,25 @@ let currentSelection = timeLarge;
 let currentTime = 0;
 let currentTimeLeft = 0;
 let timeRunning = false;
+let soundOn = false;
+let timerDone = new Audio("/audio/timer-done.mp3");
 
 timeLarge.addEventListener("click", function () {
+    soundOn = false;
     timeRunning = false;
     currentSelection = timeLarge;
     setTime();
 });
 
 timeMedium.addEventListener("click", function () {
+    soundOn = false;
     timeRunning = false;
     currentSelection = timeMedium;
     setTime();
 });
 
 timeSmall.addEventListener("click", function () {
+    soundOn = false;
     timeRunning = false;
     currentSelection = timeSmall;
     setTime();
@@ -43,7 +48,8 @@ pause.addEventListener("click", function () {
 
 reset.addEventListener("click", function () {
     timeRunning = false;
-    currentTimeLeft = Number(currentSelection.textContent.substring(2, 0) * 60)
+    soundOn = false;
+    currentTimeLeft = Number(currentSelection.textContent.substring(2, 0) * 60);
     setTime();
 });
 
@@ -56,9 +62,10 @@ function updateTime() {
     if (currentTimeLeft > 0) {
         currentTimeLeft--;
         timeDisplay.textContent = Math.floor((currentTimeLeft / 60)) + "." + (currentTimeLeft % 60);
-    } else {
+    } else if (currentTimeLeft === 0) {
         timeRunning = false;
-    }
+        soundOn = true;
+    };
 };
 
 
@@ -66,5 +73,9 @@ setInterval(function () {
     console.log("this thing is running");
     if (timeRunning) {
         updateTime();
+    }
+    if (currentTimeLeft === 0 && soundOn === true) {
+        timeRunning = false;
+        timerDone.play();
     }
 }, 1000)
