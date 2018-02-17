@@ -50,7 +50,7 @@ body {
 body {
     padding: 5px;
     background: linear-gradient(135deg, #8abaf2 0%, #292334 100%);
-    height: 100vh;
+    height: 1000px;
 }
 
 .timer-title {
@@ -61,21 +61,26 @@ body {
 }
 
 .button-background {
+    font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    width: 25%;
-    height: 60px;
+    width: 30%;
+    height: 85px;
     background-color: #292334;
     color: #f0eeea;
+    border: 3px solid rgba(255, 255, 255, 0);
     border-radius: 8px;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
     transform: translateY(0px);
     transition: .3s
 }
 
-.button-background:hover {
+.button-background:hover,
+.button-background:focus{
+    outline: none;
+    border: 4px solid #8abaf2;
+    border-radius: 8px;
     cursor: pointer;
     transform: translateY(-5px);
     box-shadow: 25px 25px 40px rgba(0, 0, 0, 0.5);
